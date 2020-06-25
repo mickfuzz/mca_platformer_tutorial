@@ -122,8 +122,7 @@ mySprite.ay = 300
 ```
 ## Using Tilemaps
 ### Create a Floor using a Tilemap @fullscreen
-
-To make a platformer we are going to need a floor and some platforms. 
+Oh no, with gravity we fall off of the bottom of the scree. To make a platformer we are going to need a floor and some platforms. 
 Drag in the ``||scene:set tilemap to  ||`` block into your on start block. 
 
 ```blocks
@@ -203,7 +202,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ### Jump only when touching floor @fullscreen
-Drag in a ``||scene:Scene||`` block ``||scene:is mySprite hitting wall ||`` inside the ``||logic:logic if||`` block. Change the setting to ``||scene:hitting wall bottome||``. 
+Drag in a ``||scene:Scene||`` block ``||scene:is mySprite hitting wall ||`` inside the ``||logic:logic if||`` block. Change the setting to ``||scene:hitting wall bottom||``. 
 Now the player will only jump when it is touching down on a platform.  
 
 ```blocks
@@ -270,122 +269,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ### Check your code
 
-Check you code.
+Check your code too see if it matches the image in the tool tip
 
-```blocks
-namespace SpriteKind {
-    export const Door = SpriteKind.create()
-}
-namespace myTiles {
-    //% blockIdentity=images._tile
-    export const tile0 = img`
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-    `
-    //% blockIdentity=images._tile
-    export const tile1 = img`
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    `
-}
-
-let strawberry: Sprite = null
-let mySprite: Sprite = null
-mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . b 5 5 b . . .
-    . . . . . . b b b b b b . . . .
-    . . . . . b b 5 5 5 5 5 b . . .
-    . b b b b b 5 5 5 5 5 5 5 b . .
-    . b d 5 b 5 5 5 5 5 5 5 5 b . .
-    . . b 5 5 b 5 d 1 f 5 d 4 f . .
-    . . b d 5 5 b 1 f f 5 4 4 c . .
-    b b d b 5 5 5 d f b 4 4 4 4 b .
-    b d d c d 5 5 b 5 4 4 4 4 4 4 b
-    c d d d c c b 5 5 5 5 5 5 5 b .
-    c b d d d d d 5 5 5 5 5 5 5 b .
-    . c d d d d d d 5 5 5 5 5 d b .
-    . . c b d d d d d 5 5 5 b b . .
-    . . . c c c c c c c c b b . . .
-`, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 0)
-mySprite.ay = 200
-tiles.setTilemap(tiles.createTilemap(
-            hex`0a0008000000000000000000000000000300000000000300010101030000000001010000010100000000000000000000000003000003000000000000010101010000000000000000000001010101010101010101`,
-            img`
-                . . . . . . . . . .
-                . . . . . . . . . .
-                2 2 2 . . . . . 2 2
-                . . 2 2 . . . . . .
-                . . . . . . . . . .
-                . . . . . . 2 2 2 2
-                . . . . . . . . . .
-                2 2 2 2 2 2 2 2 2 2
-            `,
-            [myTiles.tile0,sprites.castle.tileGrass2,sprites.builtin.forestTiles0,myTiles.tile1],
-            TileScale.Sixteen
-        ))
-scene.setBackgroundColor(9)
-for (let value of tiles.getTilesByType(myTiles.tile1)) {
-    strawberry = sprites.create(img`
-        . . . . . . . 6 . . . . . . . .
-        . . . . . . 8 6 6 . . . 6 8 . .
-        . . . e e e 8 8 6 6 . 6 7 8 . .
-        . . e 2 2 2 2 e 8 6 6 7 6 . . .
-        . e 2 2 4 4 2 7 7 7 7 7 8 6 . .
-        . e 2 4 4 2 6 7 7 7 6 7 6 8 8 .
-        e 2 4 5 2 2 6 7 7 6 2 7 7 6 . .
-        e 2 4 4 2 2 6 7 6 2 2 6 7 7 6 .
-        e 2 4 2 2 2 6 6 2 2 2 e 7 7 6 .
-        e 2 4 2 2 4 2 2 2 4 2 2 e 7 6 .
-        e 2 4 2 2 2 2 2 2 2 2 2 e c 6 .
-        e 2 2 2 2 2 2 2 4 e 2 e e c . .
-        e e 2 e 2 2 4 2 2 e e e c . . .
-        e e e e 2 e 2 2 e e e c . . . .
-        e e e 2 e e c e c c c . . . . .
-        . c c c c c c c . . . . . . . .
-    `, SpriteKind.Food)
-    tiles.placeOnTile(strawberry, value)
-    tiles.setTileAt(value, myTiles.tile0)
-}
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeScoreBy(1)
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy = -150
-})
-```
-
+![blank square](https://github.com/mickfuzz/makecode-platformer-101/blob/master/images/code_complete_mca.png?raw=true)
 ## Play Part One
 ### Play Part One @unplugged
 
