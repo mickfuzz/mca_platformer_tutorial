@@ -28,6 +28,8 @@ To create your character. Drag the  ``||variables:set mySprite||`` ``||sprites:t
 Click on the blank square and choose a player from the Gallery. What about a duck?
 Anything in the ``||loops:on start||``  block runs when the game starts.
 
+***Coding Concept Used***: In this step we have created a [Variable (click here to find out more)](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#variables)
+
 ```blocks
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
@@ -83,6 +85,8 @@ Let's add a **Jump Event** which listens for the ``||controllers:A button||`` be
 When that happens it will move our character up in the y axis. Up here is a negative value. Drag in the ``||controllers: on A button pressed ||``
 Drag inside that a block ``||sprites:set mySprite x to 0 ||``. Change ``||sprites:x||`` to ``||sprites:vy velocity||`` set it to **-150**
 
+***Coding Concept Used***: In this step we have created a [Input Event (click here to find out more)](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#input-event)
+
 ```blocks
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -132,6 +136,8 @@ mySprite.ay = 300
 ### Create a Floor using a Tilemap @fullscreen
 Oh no, with gravity we fall off of the bottom of the scree. To make a platformer we are going to need a floor and some platforms.
 Drag in the ``||scene:set tilemap to  ||`` block into your on start block.
+
+***Coding Concept Used***: The tilemap is a kind of [Array (click here to find out more)](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#arrays)
 
 ```blocks
 let mySprite: Sprite = null
@@ -200,6 +206,8 @@ We'll fix that in a bit.  For now **add some more platforms in your tilemap.**
 To jump only when touching floor we need to add in an extra ``||logic:logic if||`` block in our Event block.
 Drag in a ``||logic:if true then||`` block from the Logic section ``||ControllerButtonEvent: on A button pressed ||``.
 
+
+
 ```blocks
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -212,6 +220,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ### Jump only when touching floor @fullscreen
 Drag in a ``||scene:Scene||`` block ``||scene:is mySprite hitting wall ||`` inside the ``||logic:logic if||`` block. Change the setting to ``||scene:hitting wall bottom||``.
 Now the player will only jump when it is touching down on a platform.  
+
+***Coding Concept Used***: To decide if the player is touching the ground we
+use  [Logic (click here to find out more)](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#logic)
 
 ```blocks
 let mySprite: Sprite = null
@@ -226,7 +237,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ### Adding Food to our Tilemap @fullscreen
 **Now we need a Goal for our Game**.
-To add Food for the Player to collect **click on the tilmap image and add in a few yellow squares**.
+To add Food for the Player to collect **click on the tilemap image and add in a few yellow squares**.
 In the next step we will then turn them into strawberries.
 
 ![Add in Yellow Squares ](https://raw.githubusercontent.com/mickfuzz/getting-started-making-a-platformer-test1/master/images/makecode-yellow-s1-2020-02-16-19.gif)
@@ -242,13 +253,22 @@ After this add a ``||scene:place on top of ||`` block and set to ``||scene:place
 
 Let's removing the original yellow square which is now behind the strawberry by adding a ``||scene:scene||`` block  ``||scene: set blank box at||``  into our loop.
 Keep the blank image in the first part of the block but change the second value to ``||variables:value||``.
+
+
+***Coding Concept Used***: We add to the tilemap which is a kind of [Array](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#arrays) - and then we use a [Loop](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#loops) to loop through all the
+elements of the array and turn each one into a different kind of game component.
+
 ![blank square](https://github.com/mickfuzz/makecode-platformer-101/blob/master/images/loop_replace_yellow.png?raw=true)
+
 
 
 ## Eating Food and Points
 ### Eating Food and Points  @fullscreen
 Drag in a ``||sprites:on sprite of kind Player overlaps ||`` block anywhere on your workspace.
 Change the second ``||variables:Player||`` variable to ``||variables:Food||``.
+
+***Coding Concept Used***: This code listens out of the condition of a Player touching any Food items and then makes
+and event happen so we call it a [Listener Event](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#change-listener)
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -258,6 +278,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ### Eating Food and Points 2 @fullscreen
 Drag in a ``||sprites:destroy mySprite ||`` block inside the ``||sprites:on sprite of kind Player overlaps ||`` block
 Grab the ``||variables:otherSprite||`` variable from the first block onto the ``||variables:mySprite||`` part of the ``||sprites:destroy||`` block
+
+
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -274,6 +296,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     info.changeScoreBy(1)
 })
 ```
+***Coding Concept Used***: In this step we use the built in score [Variable (click here to find out more)](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#variables)
 
 ### Check your code
 
@@ -416,7 +439,16 @@ Try making small or large changes to the following:
 Get a friend or family member to test it out. Can they collect all the Food first time?
 Getting the balance right between too hard and too easy is key to making our game challening and interesting to play.
 
-Hope you enjoyed part one of this tutorial. In part two we add the following elements to our platform game.
+Hope you enjoyed part one of this tutorial. We built a simple game and also met
+ the following [Coding Concepts](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions).
+
+* [Variables](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#variables)
+* [User Input Events](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#input-event)
+* [Listener Events](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#change-listener)
+* [Logic](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#logic)
+* [Loops](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#loops)
+
+In part two we add the following elements to our platform game.
 
 * Adding an End Goal that you must touch to win game
 * Make it so you much collect all Food to win the game

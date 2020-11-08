@@ -55,7 +55,7 @@ namespace myTiles {
         5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
         5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
         5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5(more info here)
         5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
         5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
         5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
@@ -162,11 +162,18 @@ Drag the duplicated ``||loops:for element||`` loop back into your ``||loops:on S
 Change the ``||scene:locations||`` colour block to brown, change the name to ``||variables:chest||``, the image to a chest and the ``||sprites: of kind||`` value to ``||sprites:Door||``.
 As ``||sprites:Door||`` isn't in the drop-down list, click on **Add new Kind** and enter Door there.  
 
+***Coding Concept Used***: We add to the tilemap which is a kind of [Array](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#arrays) - and then we use a [Loop](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#loops) to loop through all the
+elements of the array and turn each one into a different kind of game component.
+
 ![Door loop ](https://github.com/mickfuzz/makecode-platformer-101/blob/master/images/door_3.png?raw=true)
 
 ### Adding a End Door 4 @fullscreen
 Add a ``||sprites:on sprite of kind Player overlaps ||`` block anywhere on your workspace.
 Change the second ``||sprites:Player||`` variable to ``||sprites:Door||``.
+
+***Coding Concept Used***: This code listens out of the condition and then makes
+and event happen so we call it a [Listener Event](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#change-listener)
+
 
 ```blocks
 namespace SpriteKind {
@@ -175,6 +182,7 @@ namespace SpriteKind {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Door, function (sprite, otherSprite) {
 })
 ```
+
 
 ### Adding a End Door 5 @fullscreen
 Drag in a ``||game: gameOver  ||`` block inside the ``||sprites:on sprite of kind Player overlaps ||`` block and set it to ``||game:game over WIN||``
@@ -355,6 +363,9 @@ function chooseLevel () {
 ### Adding another Level 6 @fullscreen
 Drag in the ``||functions:call chooseLevel||`` from ``||functions:Functions||`` to the end of the begining of the ``||functions:createLevel||`` function.
 
+***Coding Concept Used***: In these past steps we have created a
+ [Function (find out more here)](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#functions)
+
 ![game level four](https://raw.githubusercontent.com/mickfuzz/makecode-platformer-101/master/images/new_level_4.png)
 
 ### Adding another Level 7 @fullscreen
@@ -446,6 +457,9 @@ function chooseLevel () {
 ### Adding another Level 8 @fullscreen
 Right click on the Logic block ``||logic:if level = 0 ||`` and duplicate it.
 Change 0 to 1 in the second block and drag it back into the ``||functions:chooseLevel||`` function.
+
+***Coding Concept Used***: To decide what level to create we
+use  [Logic (click here to find out more)](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#logic)
 
 ```blocks
 namespace myTiles {
