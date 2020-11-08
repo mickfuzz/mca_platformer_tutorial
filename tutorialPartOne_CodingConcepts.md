@@ -13,13 +13,23 @@ In this tutorial we will cover the basics of how to:
 * Create a Game Space using platforms using the tilemap tool
 * Add Food to collect using the tilemap tool
 
-We will also cover the following Coding Concepts [(more info here)](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions).
+We will also cover the following Coding Concepts [(more info here)](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions). 
+
+Part One
 
 * [Variables](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#variables)
 * [User Input Events](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#input-event)
 * [Listener Events](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#change-listener)
 * [Logic](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#logic)
 * [Loops](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#loops)
+
+Part two
+
+* [Arrays](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#arrays)
+* [Functions](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#functions)
+* [Logic](https://mickfuzz.github.io/makecode-platformer-101/learningDimensions#logic)
+* [Code Frameworks](#framework) what shortcuts Arcade provides to help us
+
 
 ## Introduction Creating your Player Character
 ### Create your Character @fullscreen
