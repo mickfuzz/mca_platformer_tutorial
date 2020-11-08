@@ -1,6 +1,6 @@
 {
     "name": "Getting Started Making a Platformer\n",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "",
     "dependencies": {
         "core": "*"

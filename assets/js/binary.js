@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.2.9/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.4","target":"arcade","targetVersion":"1.2.9","repo":"mickfuzz/mca_platformer_tutorial"}
-// total=2919 new=26.65% cached=0.00% other=73.35%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.2.9/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.5","target":"arcade","targetVersion":"1.2.9","repo":"mickfuzz/mca_platformer_tutorial"}
+// total=2927 new=26.82% cached=0.00% other=73.18%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -57,7 +57,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P8484(s) {
+function _main___P10184(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -67,19 +67,19 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    globals._intervals___8422 = (undefined);
-    globals._pollEventQueue___8431 = (undefined);
+    globals._intervals___10117 = (undefined);
+    globals._pollEventQueue___10126 = (undefined);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-_main___P8484.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P8484.continuations = [  ]
+_main___P10184.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P10184.continuations = [  ]
 
-function _main___P8484_mk(s) {
+function _main___P10184_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P8484, depth: s.depth + 1,
+        parent: s, fn: _main___P10184, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
 } }
 
@@ -89,5 +89,5 @@ function _main___P8484_mk(s) {
 
 const breakpoints = setupDebugger(1, [])
 
-return _main___P8484
+return _main___P10184
 })
