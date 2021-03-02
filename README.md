@@ -2,7 +2,7 @@
 
 ## Summary
 This course is built on the simple idea of starting with a platform game and adding familiar
-game patterns and features.
+game patterns and features -
 
 One way to learn coding in depth is to learn how to *make the sample game from scratch* and you can do that by following this
 [Tutorial to create game from scratch Part One](https://arcade.makecode.com/beta#tutorial:github:mickfuzz/makecode-platformer-101/tutorialPartOne) and [Part Two](https://arcade.makecode.com/beta#tutorial:github:mickfuzz/makecode-platformer-101/tutorialPartTwo)
